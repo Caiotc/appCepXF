@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using ApplicationCepXF.Service;
+using ApplicationCepXF.Service.Model;
 
 namespace ApplicationCepXF
 {
@@ -16,6 +18,16 @@ namespace ApplicationCepXF
         public MainPage()
         {
             InitializeComponent();
+            BUTTTON.Clicked += adressSearch; 
+        }
+        private void adressSearch(object sender,EventArgs args)
+        {
+            //Logica Botão
+
+            //VAlidações
+            string cep = CEP.Text.Trim();
+            Adress end = ViaCepService.AdressSearch(cep);
+            ADRESS.Text = string.Format("Endereço: {0},{1},{2}", end.localidade, end.uf, end.logradouro);
         }
     }
 }

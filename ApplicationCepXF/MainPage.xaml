@@ -6,11 +6,14 @@
              mc:Ignorable="d"
              x:Class="ApplicationCepXF.MainPage">
 
-    <StackLayout>
+    <StackLayout BackgroundColor="#FFBF00" Padding="30" Spacing="30">
+        <Image Source="Logo.png" x:Name="LOGO"/>
+        <Entry Placeholder="Digite o cep" PlaceholderColor="#FFBF00" BackgroundColor="White" x:Name="CEP"/>
+        <Button Text="Buscar Cep" TextColor="White" BackgroundColor="#004168" x:Name="BUTTTON"/>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
+        <Label Text=" " 
            HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+           VerticalOptions="CenterAndExpand" x:Name="ADRESS"/>
     </StackLayout>
 
 </ContentPage>
